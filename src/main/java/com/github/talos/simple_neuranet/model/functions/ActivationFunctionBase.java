@@ -7,5 +7,5 @@ import java.util.function.Function;
  * @param <T> type of input
  * @param <R> type of result
  */
-public abstract class ActivationFunction<T, R> implements Function<T, R> {
+public abstract class ActivationFunctionBase<T, R> implements Function<T, R> {
 }

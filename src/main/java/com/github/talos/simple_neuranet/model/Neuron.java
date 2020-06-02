@@ -1,24 +1,41 @@
 package com.github.talos.simple_neuranet.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import com.github.talos.simple_neuranet.model.functions.ActivationFunctionBase;
+import com.github.talos.simple_neuranet.model.functions.SigmoidActivationFunction;
+
 /**
+ * Simle neuron with inputs, bias and activation function
  * 
- * @author martin.safranek
- *
- * @param <T> value that neuron produces
  */
 public class Neuron extends NeuronBase<Double> {
-	List<InputWeighted> inputLst;
+	private List<InputWeighted> inputLst;
+	private Double bias;
+	private ActivationFunctionBase<Double, Double> actFnc;
+
+	public Neuron() {
+		inputLst = new ArrayList<InputWeighted>();
+		actFnc = new SigmoidActivationFunction();
+	}
 
 	@Override
 	public Double get() {
-		// TODO Auto-generated method stub
-		return null;
+		Double sumInput = bias + inputLst.stream().mapToDouble(input -> input.get().doubleValue()).sum();
+		return actFnc.apply(sumInput);
 	}
 
-	public void addInput(Input<T> input) {
-		inputLst.add(input);
+	// ========================================================================================================================
+	// HELPERS
+	// ========================================================================================================================
+
+	public void addInput(InputWeighted input) {
+		this.inputLst.add(input);
+	}
+
+	public void addInputBatch(List<InputWeighted> inputLst) {
+		this.inputLst.addAll(inputLst);
 	}
 
 }
