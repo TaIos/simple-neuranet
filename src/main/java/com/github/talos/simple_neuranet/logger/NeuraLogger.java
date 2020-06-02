@@ -39,7 +39,7 @@ public class NeuraLogger {
 	// ============================================================
 
 	private void saveTextLog(String msg, NeuraLogMessageType msgType) {
-		String outStr = Util.getLogTimestampPrefixForTextFileOutput() + " " + msgType.value + " " + msg;
+		String outStr = LoggerUtil.getLogTimestampPrefixForTextFileOutput() + " " + msgType.value + " " + LoggerUtil.getStactTraceFormatted() + ": " + msg;
 		System.out.println(outStr);
 	}
 
@@ -50,7 +50,7 @@ public class NeuraLogger {
 	/*
 	 * Helper methods
 	 */
-	public static class Util {
+	public static class LoggerUtil {
 
 		/**
 		 * Get time prefix for a text log message
@@ -111,6 +111,23 @@ public class NeuraLogger {
 
 		public static LocalDateTime getLocalDateTimeNow() {
 			return LocalDateTime.now();
+		}
+
+		public static String getStactTraceFormatted() {
+			StackTraceElement[] trace = Thread.currentThread().getStackTrace();
+
+			if (trace.length > 4) {
+				StackTraceElement contextElem = trace[4];
+				String classNameFull = contextElem.getClassName();
+				String methodName = contextElem.getMethodName();
+
+				String[] classNameSplit = classNameFull.split("\\.");
+				String classNameSimple = classNameSplit[classNameSplit.length - 1];
+				return classNameSimple + "#" + methodName;
+			} else {
+				return "";
+			}
+
 		}
 	}
 
