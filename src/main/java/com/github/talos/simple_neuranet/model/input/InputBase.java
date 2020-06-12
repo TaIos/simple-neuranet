@@ -1,11 +1,11 @@
-package com.github.talos.simple_neuranet.model;
+package com.github.talos.simple_neuranet.model.input;
 
 /**
  * General input
  * 
  * @param <T> type value that input produces
  */
-public abstract class Input<T> {
+public abstract class InputBase<T> {
 
 	/**
 	 * Get value of input.

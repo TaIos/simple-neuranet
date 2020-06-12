@@ -1,10 +1,11 @@
-package com.github.talos.simple_neuranet.model;
+package com.github.talos.simple_neuranet.model.neuron;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.github.talos.simple_neuranet.model.activation_functions.ActivationFunctionBase;
 import com.github.talos.simple_neuranet.model.activation_functions.SigmoidActivationFunction;
+import com.github.talos.simple_neuranet.model.input.InputWeighted;
 
 /**
  * Simle neuron with inputs, bias and activation function

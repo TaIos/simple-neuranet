@@ -1,6 +1,6 @@
-package com.github.talos.simple_neuranet.model;
+package com.github.talos.simple_neuranet.model.input;
 
-public class InputWeighted extends Input<Double> {
+public class InputWeighted extends InputBase<Double> {
 	Double value;
 	Double weight;
 

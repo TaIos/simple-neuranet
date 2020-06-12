@@ -9,8 +9,8 @@ import com.github.talos.simple_neuranet.logger.NeuraLogger;
  */
 public class SimpleNeuranet {
 
-	private int layerCount;
-	private int neuronLayerCount[];
+	private int layerCount; // neuron layer count
+	private int neuronLayerCount[]; //
 
 	SimpleNeuranet(int layerCount, int neuronLayerCount[]) {
 		this.layerCount = layerCount;
