@@ -9,7 +9,7 @@ public class SimpleNeuranetBuilder {
 	private int layerCount;
 	private int neuronLayerCount[];
 
-	public SimpleNeuranetBuilder(int layerCount, int[] neuronLayerCount) {
+	private SimpleNeuranetBuilder(int layerCount, int[] neuronLayerCount) {
 		this.layerCount = layerCount;
 		this.neuronLayerCount = neuronLayerCount;
 	}
