@@ -24,14 +24,22 @@ class NeuraApiInitializationTest {
 	// }
 
 	@Test
+	void succesfullInitializtion() {
+		try {
+			SimpleNeuranetBuilder.newBuilder().setLayerCount(2).setNeuronCountForLayer(1, 1).setNeuronCountForLayer(2, 2).build();
+		} catch (SimpleNeuranetBuilderException e) {
+			fail("Initialization with correct parameters failed.");
+		}
+	}
+
+	@Test
 	void testBuild() {
 		try {
 			SimpleNeuranetBuilder.newBuilder().build();
 		} catch (SimpleNeuranetBuilderException e) {
-			fail("sample error");
 			return;
 		}
-		fail("Inicialization succesfull without setting any value.");
+		fail("Initialization succesfull without setting any value.");
 	}
 
 	// @Test
