@@ -1,0 +1,42 @@
+{
+	"configuration": {
+		"name": "NeuraLoggerConfig",
+		"appenders": {
+			"RollingFile": {
+				"name": "FILEOUT",
+				"fileName": "log4j2-application.log",
+				"filePattern": "log4j2-application-%d{MM-dd-yy-HH-mm-ss}-%i.log.gz",
+				"PatternLayout": {
+					"pattern": "%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"
+				},
+				"Policies": {
+					"SizeBasedTriggeringPolicy": {
+						"size": "10 MB"
+					}
+				},
+				"DefaultRolloverStrategy": {
+					"max": "10"
+				}
+			},
+			"Console": {
+				"name": "STDOUT",
+				"PatternLayout": {
+					"pattern": "%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"
+				}
+			}
+		},
+		"loggers": {
+			"root": {
+				"level": "debug",
+				"appender-ref": [
+					{
+						"ref": "STDOUT"
+					},
+					{
+						"ref": "FILEOUT"
+					}
+				]
+			}
+		}
+	}
+}
