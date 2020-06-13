@@ -10,3 +10,9 @@
 2020-06-13 15:54:50 WARN  NeuraLogger:34 - Sample warning message.
 2020-06-13 15:54:50 INFO  NeuraLogger:26 - Initialized with: layerCount=2
 2020-06-13 15:54:50 INFO  NeuraLogger:26 - neuronLayerCount=[1, 2]
+2020-06-13 16:02:51 DEBUG NeuraLogger:42 - Sample debug message.
+2020-06-13 16:02:51 ERROR NeuraLogger:18 - Sample error message.
+2020-06-13 16:02:51 INFO  NeuraLogger:26 - Sample info message.
+2020-06-13 16:02:51 WARN  NeuraLogger:34 - Sample warning message.
+2020-06-13 16:02:51 INFO  NeuraLogger:26 - Initialized with: layerCount=2
+2020-06-13 16:02:51 INFO  NeuraLogger:26 - neuronLayerCount=[1, 2]
