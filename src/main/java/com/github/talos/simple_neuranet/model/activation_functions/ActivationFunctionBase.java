@@ -9,4 +9,7 @@ import java.util.function.Function;
  * @param <R> type of result
  */
 public abstract class ActivationFunctionBase<T, R> implements Function<T, R> {
+
+	public abstract R apply(T x);
+
 }
