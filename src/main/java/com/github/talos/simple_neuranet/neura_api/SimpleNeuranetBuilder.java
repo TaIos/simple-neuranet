@@ -3,7 +3,8 @@ package com.github.talos.simple_neuranet.neura_api;
 import com.github.talos.simple_neuranet.exception.SimpleNeuranetBuilderException;
 
 /**
- * Builder for creating simple-neuranet instance
+ * Builder for creating simple-neuranet instance. For creating simple-neuranet instace it is easier to initialize it in one line rather on multiple
+ * lines. This pattern can also be seen in scikit.
  */
 public class SimpleNeuranetBuilder {
 	private int layerCount;
